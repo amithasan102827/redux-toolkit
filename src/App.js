@@ -1,23 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import CounterView from './CounterView/CounterView';
+import { ViewUsers } from './ViewUsers/ViewUsers';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { ViewUserDetails } from './ViewUserDetails/ViewUserDetails';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+
+
+      <BrowserRouter>
+       
+      <Routes>
+          <Route path="/" element={<ViewUsers></ViewUsers>} />
+          <Route path="ViewUserDetails/:detailsId" element={<ViewUserDetails></ViewUserDetails>} />
+
+    
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
